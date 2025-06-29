@@ -9,6 +9,6 @@ df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 df['target'] = iris.target
 
 # Save as CSV
-df.to_csv('irisdataset.csv', index=False)
+df.to_csv('data/irisdataset.csv', index=False)
 
 print("✅ 'irisdataset.csv' has been saved.")
