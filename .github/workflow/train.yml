@@ -1,14 +1,14 @@
 name: Train ML Model
 
-on: [push]  # Trigger workflow on every push to any branch
+on: [push]  # Runs this workflow every time code is pushed
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3  # Checks out your code to the runner
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -18,8 +18,5 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Run training script
+    - name: Run training
       run: python train_model.py
-
-    - name: Print success message
-      run: echo "✅ Training pipeline completed successfully!"
